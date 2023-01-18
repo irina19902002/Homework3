@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
+//2. Необходимо написать программу конвертер физических величин. Пользователю сначала предлагается выбрать что переводить (масса или расстояние), затем предлагается выбрать единицу измерения. Далее пользователь должен ввести
+//число. В результате программа должна вывести 4 строки с переведенными величинами.
+//
+//Масса: кг, грамм, фунт(lb), карат в любую сторону
+//Длина (расстояние):
+//метр, миля, ярд, фут в любую сторону
 public class ConverterPQ {
     public static void main(String[] args) {
-        //2. Необходимо написать программу конвертер физических величин. Пользователю сначала предлагается выбрать что переводить (масса или расстояние), затем предлагается выбрать единицу измерения. Далее пользователь должен ввести
-        //число. В результате программа должна вывести 4 строки с переведенными величинами.
-        //
-        //Масса: кг, грамм, фунт(lb), карат в любую сторону
-        //Длина (расстояние):
-        //метр, миля, ярд, фут в любую сторону
         System.out.println("Выберите что переводить:");
         System.out.println("[1] - масса ");
         System.out.println("[2] - расстояние");
@@ -18,8 +18,8 @@ public class ConverterPQ {
             System.out.println("Выберите единицу измерения массы:");
             System.out.println("[1] - килограмм");
             System.out.println("[2] - грамм");
-            System.out.println("[3] - тонна");
-            System.out.println("[4] - центнер");
+            System.out.println("[3] - фунт");
+            System.out.println("[4] - карат");
             int Ed = sc.nextInt();
             System.out.println("Ввведите число: ");
             double massa = sc.nextDouble();
@@ -34,12 +34,8 @@ public class ConverterPQ {
             System.out.println("Ввведите число: ");
             double dlina = sc.nextDouble();
             convertDistance(dlina, EdIzm);
-
         }
-
-
     }
-
 
     public static void convertDistance(double dist, int Ed) {
         switch (Ed) {
@@ -79,27 +75,27 @@ public class ConverterPQ {
             case 1://килограмм
                 System.out.println("килограммы: " + mass);
                 System.out.println("граммы: " + mass * 1000);
-                System.out.println("тонны: " + mass / 1000);
-                System.out.println("центнеры: " + mass / 100);
+                System.out.println("фунт: " + mass * 2.205);
+                System.out.println("карат: " + mass * 5000);
                 break;
             case 2://грамм
                 System.out.println("килограммы: " + mass / 1000);
                 System.out.println("граммы: " + mass);
-                System.out.println("тонны: " + mass / 1000000);
-                System.out.println("центнеры: " + mass / 100000);
+                System.out.println("фунт: " + mass / 453.6);
+                System.out.println("карат: " + mass * 5);
                 break;
-            case 3://тонна
-                System.out.println("килограммы: " + mass * 1000);
-                System.out.println("граммы: " + mass * 1000000);
-                System.out.println("тонны: " + mass);
-                System.out.println("центнеры: " + mass * 10);
+            case 3://фунт
+                System.out.println("килограммы: " + mass / 2.205);
+                System.out.println("граммы: " + mass * 453.6);
+                System.out.println("фунт: " + mass);
+                System.out.println("карат: " + mass * 2268);
                 break;
 
-            case 4://центнер
-                System.out.println("килограммы: " + mass * 100);
-                System.out.println("граммы: " + mass / 100000);
-                System.out.println("тонны: " + mass / 10);
-                System.out.println("центнеры: " + mass);
+            case 4://карат
+                System.out.println("килограммы: " + mass / 5000);
+                System.out.println("граммы: " + mass / 5);
+                System.out.println("фунт: " + mass / 2268);
+                System.out.println("карат: " + mass);
                 break;
             default:
                 System.out.println("Вы ввели недопустимое значение");
