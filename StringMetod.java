@@ -9,10 +9,23 @@ public class StringMetod {
         //Вырезать строку Java c помощью метода String.substring().
         String a = "I like Java!!!";
         System.out.println(a.startsWith("I like"));
+        strreplace(a);//Заменить все символы “а” на “о”.
+
+
 
 
     }
+// //Заменить все символы “а” на “о”.
 
+    public static void strreplace(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            if ((text.charAt(i)) == 'a') {
+                System.out.print("o");
+            } else {
+                System.out.print(text.charAt(i));
+            }
+        }
 
+    }
 }
 
